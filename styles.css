@@ -33,7 +33,7 @@ body {
     
 }
 
-.numbers {
+.buttons {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -48,11 +48,7 @@ body {
     
 }
 
-.operations {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
+
 
 .operation {
     height: 45px;
