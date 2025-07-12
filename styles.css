@@ -1,6 +1,6 @@
-* {
+/* * {
     border:solid 2px black
-}
+} */
 
 body {
     display: flex;
@@ -12,17 +12,38 @@ body {
     width: 250px;
     height: 450px;
     justify-content: space-between;
+    background-color: lightgray;
+    border-radius: 10px;
+    gap:12px;
 }
 .display {
  flex-grow: 1;
  max-height: 100px;
+ background-color: gray;
+ border-radius: 10px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 10px;
+ 
 }
 
 .functions {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap:20px;
+    /* gap:20px; */
+}
+
+.equals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 95, 0);
+    height: 45px;
+    margin: 0px 10px;
+    border-radius: 24px;
+    font-size: xx-large;
 }
 
 
@@ -49,24 +70,19 @@ body {
 }
 
 
-
-.operation {
+.row div {
     height: 45px;
     width:45px;
-    background-color: darkorange;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+.operation {
+    background-color: rgb(255, 140, 0);
 }
 
 .number {
-    height: 45px;
-    width:45px;
-    background-color: yellow;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: rgb(255, 255, 0);
 }
-
