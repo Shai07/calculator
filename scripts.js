@@ -37,7 +37,7 @@ function solve(str) {
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
     if (button.id === 'delete') display.textContent = 0;
-    else if (button.id === '.') {
+    else if (button.id === 'decimal') {
         if (display.textContent.indexOf(' ') === -1) {
             if (!display.textContent.includes('.')){
                 if (reset === true) {display.textContent = '0.1'; reset = false}
