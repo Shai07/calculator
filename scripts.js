@@ -1,14 +1,7 @@
-const number = document.querySelector('.number');
-const operation = document.querySelector('.operation');
-const equal = document.querySelector('.equal');
+const buttons = document.querySelectorAll('.row div');
+const equal = document.querySelector('.equals');
 const display = document.querySelector('.display');
-
-//use splice(index to remove, how many to remove starting with this index) to remove one element from list
-
-let problem = "5 + 5 x 5"; // return 30;
-
-console.log(solve(problem));
-
+let reset = false;
 
 // solves str math expressions with priority to order of operation.
 function solve(str) {
@@ -34,8 +27,33 @@ function solve(str) {
             }
         }
     }
+    if (arr[0] === Infinity) return "ERROR";
     return arr[0];
 
 
 }
+
+// allows to press numbers and operation, making sure decimal can't be pressed twice for same number
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+    if (button.id === 'delete') display.textContent = 0;
+    else if (button.id === '.') {
+        if (display.textContent.indexOf(' ') === -1) {
+            if (!display.textContent.includes('.')){
+                if (reset === true) {display.textContent = '0.1'; reset = false}
+                else display.textContent += '.';
+            }
+        } else if (!display.textContent.slice(display.textContent.lastIndexOf(' ')).includes('.')) display.textContent += '.';
+    } else {
+        if (reset === true) {display.textContent = button.textContent; reset = false;}
+        else display.textContent = (display.textContent === '0') ? button.textContent: display.textContent + button.textContent;
+    }
+    
+})});
+
+// equal function
+equal.addEventListener('click', function() {
+    display.textContent = solve(display.textContent);
+    reset = true;
+})
 
