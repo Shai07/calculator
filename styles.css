@@ -12,19 +12,20 @@ body {
     width: 250px;
     height: 450px;
     justify-content: space-between;
-    background-color: lightgray;
+    background-color: rgb(0, 0, 0);
     border-radius: 10px;
     gap:12px;
 }
 .display {
  flex-grow: 1;
  max-height: 100px;
- background-color: gray;
+ background-color: rgb(255, 255, 255);
  border-radius: 10px;
  display: flex;
  align-items: center;
  justify-content: center;
  margin: 10px;
+ font-size: xx-large;
  
 }
 
@@ -44,6 +45,8 @@ body {
     margin: 0px 10px;
     border-radius: 24px;
     font-size: xx-large;
+    font-weight: 700;
+    transition: all 0.2s ease;
 }
 
 
@@ -77,12 +80,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: x-large;
+    font-weight: 700;
+    transition: all 0.2s ease;
 
 }
 .operation {
-    background-color: rgb(255, 140, 0);
+    background-color: lightblue
 }
 
 .number {
     background-color: rgb(255, 255, 0);
+}
+
+#delete, #decimal {
+    background-color: rgb(255, 140, 0);
+}
+
+.row div:hover {
+    opacity: 0.7;
+    scale: 1.1;
+}
+
+.equals:hover {
+    opacity: 0.7;
+    scale: 1.05;
 }
