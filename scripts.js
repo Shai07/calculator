@@ -45,7 +45,8 @@ buttons.forEach((button) => {
             }
         } else if (!display.textContent.slice(display.textContent.lastIndexOf(' ')).includes('.')) display.textContent += '.';
     } else {
-        if (reset === true) {display.textContent = button.textContent; reset = false;}
+        if (button.classList.contains('operation')) {reset = false; display.textContent += button.textContent}
+        else if (reset === true) {display.textContent = button.textContent; reset = false;}
         else display.textContent = (display.textContent === '0') ? button.textContent: display.textContent + button.textContent;
     }
     
